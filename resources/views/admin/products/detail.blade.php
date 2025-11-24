@@ -8,6 +8,14 @@
 <body class="bg-gray-50">
 <div class="max-w-4xl mx-auto py-16 px-6">
 
+<div class="mb-4">
+    <a href="{{ route('admin.products.index') }}"
+       class="inline-block px-4 py-2 bg-gray-200 text-gray-700 rounded-lg hover:bg-gray-300 transition">
+        ← Back
+    </a>
+</div>
+
+
     <h1 class="text-4xl font-bold text-gray-900 mb-6">
         {{ $product->title }}
     </h1>

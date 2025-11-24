@@ -87,7 +87,7 @@
           Young <span class="text-cyan-500 italic">Coders</span>
         </h1>
         <p class="text-gray-600 mb-8 text-base md:text-lg">
-          Mini Coding Academy nurtures the next generation of programmers through engaging, hands-on learning experiences designed for children and teens.
+          Mini Coding Academy mendidik generasi programmer berikutnya melalui pengalaman belajar langsung yang menarik, yang dirancang untuk anak-anak dan remaja.
         </p>
 
         <div class="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">

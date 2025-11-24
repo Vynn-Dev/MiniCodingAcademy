@@ -7,12 +7,12 @@
 
     <div class="p-6 bg-white shadow rounded-xl">
         <h3 class="text-gray-600">Total Services</h3>
-        <p class="text-3xl font-bold mt-2">{{ $services_count ?? 0 }}</p>
+        <p class="text-3xl font-bold mt-2">{{ $services_count ?? 6 }}</p>
     </div>
 
     <div class="p-6 bg-white shadow rounded-xl">
         <h3 class="text-gray-600">Total Products</h3>
-        <p class="text-3xl font-bold mt-2">{{ $products_count ?? 0 }}</p>
+        <p class="text-3xl font-bold mt-2">{{ $products_count ?? 3 }}</p>
     </div>
 
     <div class="p-6 bg-white shadow rounded-xl">
