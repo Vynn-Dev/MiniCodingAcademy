@@ -102,7 +102,7 @@ class ProductController extends Controller
 }
 
 
-    // ===== DELETE DATA =====
+    // ===== DELETE DATA IMAGE =====
     public function deleteImage(ProductImage $image)
     {
         Storage::disk('public')->delete($image->image_path);
@@ -110,6 +110,20 @@ class ProductController extends Controller
 
         return back()->with('success', 'Foto berhasil dihapus');
     }
+    // ===== DELETE DATA =====
+    public function destroy($id)
+{
+    $product = Product::findOrFail($id);
+
+    // hapus gambar jika ada
+    if ($product->image && file_exists(public_path('storage/' . $product->image))) {
+        unlink(public_path('storage/' . $product->image));
+    }
+
+    $product->delete();
+
+    return redirect()->route('products.index')->with('success', 'Product deleted successfully');
+}
 
   // ===== SHOW PRODUCT DETAIL =====
 public function show($id)

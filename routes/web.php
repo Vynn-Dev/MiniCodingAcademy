@@ -36,7 +36,7 @@ Route::prefix('admin')->group(function () {
     Route::get('/products/{product}/edit', [ProductController::class, 'edit'])->name('admin.products.edit');
     Route::put('/products/{product}', [ProductController::class, 'update'])->name('admin.products.update');
 
-    Route::delete('/products/{product}', [ProductController::class, 'destroy'])->name('admin.products.destroy');
+    Route::delete('/admin/products/{id}', [ProductController::class, 'destroy'])->name('products.destroy');
     Route::delete('/admin/products/image/{image}', [ProductController::class, 'deleteImage'])
     ->name('admin.products.image.delete');
 
