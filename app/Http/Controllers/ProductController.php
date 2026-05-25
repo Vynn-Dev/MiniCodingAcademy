@@ -122,7 +122,7 @@ class ProductController extends Controller
 
     $product->delete();
 
-    return redirect()->route('products.index')->with('success', 'Product deleted successfully');
+    return redirect()->route('admin.products.index')->with('success', 'Product deleted successfully');
 }
 
   // ===== SHOW PRODUCT DETAIL =====

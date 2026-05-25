@@ -5,6 +5,8 @@ use App\Http\Controllers\ServiceController;
 use App\Http\Controllers\ProductController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
+use App\Models\Product;
+use App\Models\Service;
 
 // Admin login / logout (session-based)
 Route::get('/admin/login', [AdminController::class, 'showLogin'])->name('admin.login');
@@ -21,35 +23,18 @@ Route::prefix('admin')->group(function () {
     Route::resource('products', ProductController::class)->names('admin.products');
 });
 
-// ADMIN PRODUCT CRUD (duplikasi — aman tapi sebenarnya tidak perlu)
-Route::prefix('admin')->group(function () {
-    
-    Route::get('/products/{product}', [ProductController::class, 'show'])
-     ->name('product.detail');
 
-
-    Route::get('/products', [ProductController::class, 'index'])->name('admin.products.index');
-
-    Route::get('/products/create', [ProductController::class, 'create'])->name('admin.products.create');
-    Route::post('/products/store', [ProductController::class, 'store'])->name('admin.products.store');
-
-    Route::get('/products/{product}/edit', [ProductController::class, 'edit'])->name('admin.products.edit');
-    Route::put('/products/{product}', [ProductController::class, 'update'])->name('admin.products.update');
-
-    Route::delete('/admin/products/{id}', [ProductController::class, 'destroy'])->name('products.destroy');
-    Route::delete('/admin/products/image/{image}', [ProductController::class, 'deleteImage'])
-    ->name('admin.products.image.delete');
 
 // HOME + PRODUCT LIST
 Route::get('/', function () {
     $products = Product::latest()->get(); // ambil semua produk dari database
+    $services = Service::latest()->get(); // ambil semua layanan dari database
     return view('home', compact('products'));
 })->name('home');
 
 // PRODUCT DETAIL PAGE
 Route::get('/product/{id}', [ProductController::class, 'show'])->name('product.show');
 
-});
 
 Route::get('/', [HomeController::class, 'index'])->name('home');
 

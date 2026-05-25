@@ -9,9 +9,9 @@ class FrontendController extends Controller
 {
     public function home()
     {
-        $services = Service::all();
         $products = Product::latest()->limit(6)->get();
+        $services = Service::all();
 
-        return view('home', compact('services', 'products'));
+        return view('home', compact('products', 'services'));
     }
 }

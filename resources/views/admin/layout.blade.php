@@ -3,76 +3,87 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MCA Admin Dashboard</title>
+    <title>{{ config('app.name', 'MCA') }} Admin</title>
 
-    <!-- Tailwind -->
     <script src="https://cdn.tailwindcss.com"></script>
-
+    <link rel="icon" type="image/png" href="{{ asset('images/MCA_Logo-removebg-preview (1) (1).png') }}" />
     <style>
         .sidebar-open { transform: translateX(0); }
         .sidebar-closed { transform: translateX(-100%); }
     </style>
 </head>
 
-<body class="bg-gray-100">
+<body class="bg-slate-50 text-slate-900 min-h-screen">
 
-    <!-- ===== HEADER / NAVBAR ===== -->
-    <header class="bg-white shadow fixed top-0 left-0 w-full z-40 px-6 py-4 flex justify-between items-center">
-        
-        <!-- Sidebar Toggle (Mobile) -->
-        <button id="toggleSidebar" class="md:hidden text-gray-700 text-2xl">
-            ☰
-        </button>
-
-        <h1 class="text-xl font-bold text-gray-700">
-            <span class="text-cyan-600">Admin</span> Dashboard
-        </h1>
-
-        <!-- Logout -->
-        <form action="{{ route('admin.logout') }}" method="POST">
-            @csrf
-            <button class="bg-red-500 text-white px-4 py-2 rounded hover:bg-red-600">
-                Logout
-            </button>
-        </form>
-    </header>
-
-    <!-- ===== SIDEBAR ===== -->
     <aside id="sidebar"
-        class="fixed top-0 left-0 w-64 h-full bg-white shadow-md pt-28 pb-6 px-4 z-30
-               sidebar-closed md:sidebar-open md:translate-x-0 transition-transform duration-300">
+        class="fixed inset-y-0 left-0 z-40 w-72 overflow-y-auto bg-white border-r border-slate-200 shadow-xl pt-6 px-5
+               sidebar-closed md:translate-x-0 transition-transform duration-300">
 
-        <nav class="space-y-3">
+        <div class="mb-8 flex items-center gap-3 px-1">
+            <div class="flex h-12 w-12 items-center justify-center rounded-3xl bg-cyan-600 text-xl font-semibold text-white">
+                M
+            </div>
+            <div>
+                <p class="text-sm text-slate-500">MiniCoding Academy</p>
+                <h2 class="text-xl font-semibold text-slate-900">Admin Panel</h2>
+            </div>
+        </div>
 
+        <nav class="space-y-2">
             <a href="{{ route('admin.dashboard') }}"
-               class="block px-4 py-3 rounded hover:bg-cyan-100
-                      {{ request()->routeIs('admin.dashboard') ? 'bg-cyan-500 text-white' : 'text-gray-700' }}">
-                📊 Dashboard
+               class="flex items-center gap-3 rounded-3xl px-4 py-3 text-sm font-medium transition hover:bg-cyan-50
+                      {{ request()->routeIs('admin.dashboard') ? 'bg-cyan-500 text-white' : 'text-slate-700' }}">
+                <span class="text-lg">📊</span>
+                <span>Dashboard</span>
             </a>
 
             <a href="{{ route('admin.services.index') }}"
-               class="block px-4 py-3 rounded hover:bg-cyan-100
-                      {{ request()->routeIs('admin.services.*') ? 'bg-cyan-500 text-white' : 'text-gray-700' }}">
-                🛠️ Services
+               class="flex items-center gap-3 rounded-3xl px-4 py-3 text-sm font-medium transition hover:bg-cyan-50
+                      {{ request()->routeIs('admin.services.*') ? 'bg-cyan-500 text-white' : 'text-slate-700' }}">
+                <span class="text-lg">🛠️</span>
+                <span>Services</span>
             </a>
 
             <a href="{{ route('admin.products.index') }}"
-               class="block px-4 py-3 rounded hover:bg-cyan-100
-                      {{ request()->routeIs('admin.products.*') ? 'bg-cyan-500 text-white' : 'text-gray-700' }}">
-                📦 Products
+               class="flex items-center gap-3 rounded-3xl px-4 py-3 text-sm font-medium transition hover:bg-cyan-50
+                      {{ request()->routeIs('admin.products.*') ? 'bg-cyan-500 text-white' : 'text-slate-700' }}">
+                <span class="text-lg">📦</span>
+                <span>Products</span>
             </a>
-
         </nav>
     </aside>
 
-    <!-- ===== PAGE CONTENT ===== -->
-    <main class="pt-24 md:ml-64 px-6 pb-10 transition-all">
+    <div class="md:pl-72">
+        <header class="fixed inset-x-0 top-0 z-30 flex items-center justify-between gap-4 border-b border-slate-200 bg-white/95 px-6 py-4 backdrop-blur-md shadow-sm">
+            <div class="flex items-center gap-3">
+                <button id="toggleSidebar" class="md:hidden inline-flex h-11 w-11 items-center justify-center rounded-2xl bg-slate-100 text-slate-700 shadow-sm">
+                    ☰
+                </button>
+                <div>
+                    <h1 class="text-xl font-semibold text-slate-900">@yield('page_title', 'Dashboard')</h1>
+                    <p class="text-sm text-slate-500">Overview of your admin panel and metrics.</p>
+                </div>
+            </div>
 
-        @yield('content')
+            <div class="flex flex-1 items-center justify-end gap-3">
+                <div class="hidden sm:flex flex-1 max-w-md items-center rounded-2xl border border-slate-200 bg-slate-100 px-3 py-2 text-slate-500">
+                    <span class="mr-2">🔍</span>
+                    <input type="search" placeholder="Search..." class="w-full bg-transparent text-sm outline-none" />
+                </div>
+                <form action="{{ route('admin.logout') }}" method="POST" class="inline-flex">
+                    @csrf
+                    <button class="rounded-2xl bg-red-500 px-4 py-2 text-sm font-semibold text-white transition hover:bg-red-600">
+                        Logout
+                    </button>
+                </form>
+            </div>
+        </header>
 
-    </main>
+        <main class="min-h-screen bg-slate-50 px-6 pt-32 pb-10">
+            @yield('content')
+        </main>
+    </div>
 
-    <!-- Toggle Sidebar Script -->
     <script>
         const sidebar = document.getElementById("sidebar");
         const toggleBtn = document.getElementById("toggleSidebar");

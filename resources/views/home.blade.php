@@ -7,6 +7,7 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- AOS Library -->
     <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet" />
+    <link rel="icon" type="image/png" href="{{ asset('images/MCA_Logo-removebg-preview (1) (1).png') }}" />
     <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
     <style>
       /* Small helper so hero doesn't hide under fixed navbar on small screens */
@@ -92,7 +93,7 @@
 
         <div class="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
           <a href="#services" class="w-full sm:w-auto">
-            <button class="bg-cyan-500 px-6 py-3 rounded-lg font-semibold text-white hover:bg-cyan-400 transition w-full">Learn More</button>
+            <button class="bg-cyan-500 px-6 py-3 rounded-lg font-semibold text-white hover:bg-cyan-400 transition w-full">What We Offer</button>
           </a>
           <a href="#products" class="w-full sm:w-auto">
             <button class="border border-cyan-500 text-cyan-500 px-6 py-3 rounded-lg font-semibold hover:bg-cyan-500 hover:text-white transition w-full">Our Products</button>
@@ -276,96 +277,153 @@
 
 
     <!-- ===== STRUKTUR ORGANISASI & VISI MISI (moved near bottom) ===== -->
-    <section id="about" class="bg-gray-50 px-6 md:px-8 py-24">
+    <section id="about" class="bg-gradient-to-b from-slate-50 to-white px-6 md:px-8 py-24">
       <div class="max-w-6xl mx-auto">
-        <!-- Struktur Organisasi -->
-        <div class="struktur mb-20" data-aos="fade-up" data-aos-delay="150">
-          <h3 class="text-3xl font-semibold text-center mb-12 text-gray-900">
-            Struktur Organisasi
-          </h3>
+        
+        <!-- Section Header -->
+        <div class="text-center mb-20" data-aos="fade-up">
+          <p class="text-cyan-600 uppercase tracking-widest text-sm font-semibold mb-3">About MCA</p>
+          <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+            Mengenal <span class="text-cyan-500">Mini Coding Academy</span>
+          </h2>
+          <p class="text-gray-600 max-w-2xl mx-auto text-base md:text-lg leading-relaxed">
+            Kami adalah komunitas pendidikan teknologi yang berkomitmen untuk memberdayakan generasi muda melalui pembelajaran coding dan inovasi digital.
+          </p>
+        </div>
 
-          <!-- Swiper Container -->
-          <div class="swiper mySwiper max-w-5xl mx-auto">
-            <div class="swiper-wrapper">
+        <!-- Struktur Organisasi / Tim Kami (Slider) -->
+        <div class="struktur mb-24" data-aos="fade-up" data-aos-delay="150">
+          <div class="text-center mb-14">
+            <h3 class="text-3xl md:text-4xl font-semibold text-gray-900 mb-3">
+              Tim Kami
+            </h3>
+            <p class="text-gray-600 max-w-2xl mx-auto">
+              Profesional berpengalaman yang berdedikasi untuk kesuksesan setiap siswa.
+            </p>
+          </div>
 
-              <!-- Card 1 -->
-              <div class="swiper-slide flex justify-center">
-                <div class="bg-white border border-gray-200 rounded-2xl shadow-md p-6 text-center max-w-xs">
-                  <img src="{{ asset('images/blank-profile-picture.webp') }}" class="w-28 h-28 mx-auto rounded-full mb-4" />
-                  <h3 class="font-semibold text-lg text-gray-900">Roni Okfriyandi, S.Kom</h3>
-                  <p class="text-cyan-600 font-medium">Marketing</p>
-                  <p class="text-gray-600 text-sm mt-2">
-                    Mengelola dan mengembangkan strategi pemasaran MCA untuk menjangkau siswa lebih luas.
-                  </p>
+          <!-- Swiper Container with Arrows -->
+          <div class="flex items-center justify-center gap-6">
+            <!-- Left Arrow -->
+            <div class="swiper-button-prev text-cyan-600 relative w-auto h-auto after:text-5xl after:content-['←']"></div>
+
+            <!-- Swiper -->
+            <div class="swiper mySwiper max-w-5xl mx-auto">
+              <div class="swiper-wrapper">
+
+                <!-- Team Member 1 -->
+                <div class="swiper-slide flex justify-center">
+                  <div class="bg-white rounded-3xl shadow-lg p-6 text-center max-w-xs">
+                    <img src="{{ asset('images/blank-profile-picture.webp') }}" alt="Roni Okfriyandi" class="w-28 h-28 mx-auto rounded-full mb-4 ring-2 ring-cyan-100" />
+                    <h4 class="font-semibold text-lg text-gray-900">Roni Okfriyandi</h4>
+                    <p class="text-cyan-600 font-medium text-sm mb-2">S.Kom</p>
+                    <p class="inline-block px-3 py-1 rounded-full bg-cyan-100 text-cyan-700 text-xs font-semibold mb-3">Marketing</p>
+                    <p class="text-gray-600 text-sm">
+                      Mengelola strategi pemasaran MCA untuk menjangkau siswa lebih luas.
+                    </p>
+                  </div>
                 </div>
+
+                <!-- Team Member 2 -->
+                <div class="swiper-slide flex justify-center">
+                  <div class="bg-white rounded-3xl shadow-lg p-6 text-center max-w-xs">
+                    <img src="{{ asset('images/blank-profile-picture.webp') }}" alt="Ranti Ermina Sari" class="w-28 h-28 mx-auto rounded-full mb-4 ring-2 ring-cyan-100" />
+                    <h4 class="font-semibold text-lg text-gray-900">Ranti Ermina Sari</h4>
+                    <p class="text-cyan-600 font-medium text-sm mb-2">S.Pd, Gr</p>
+                    <p class="inline-block px-3 py-1 rounded-full bg-emerald-100 text-emerald-700 text-xs font-semibold mb-3">Project Manager</p>
+                    <p class="text-gray-600 text-sm">
+                      Koordinasi proyek dan memastikan setiap program berjalan efektif.
+                    </p>
+                  </div>
+                </div>
+
+                <!-- Team Member 3 -->
+                <div class="swiper-slide flex justify-center">
+                  <div class="bg-white rounded-3xl shadow-lg p-6 text-center max-w-xs">
+                    <img src="{{ asset('images/blank-profile-picture.webp') }}" alt="Nadir" class="w-28 h-28 mx-auto rounded-full mb-4 ring-2 ring-cyan-100" />
+                    <h4 class="font-semibold text-lg text-gray-900">Nadir</h4>
+                    <p class="text-cyan-600 font-medium text-sm mb-2">S.Kom, Gr</p>
+                    <p class="inline-block px-3 py-1 rounded-full bg-blue-100 text-blue-700 text-xs font-semibold mb-3">System Analyst</p>
+                    <p class="text-gray-600 text-sm">
+                      Mendesain sistem pembelajaran digital yang efisien dan mudah digunakan.
+                    </p>
+                  </div>
+                </div>
+
+                <!-- Team Member 4 -->
+                <div class="swiper-slide flex justify-center">
+                  <div class="bg-white rounded-3xl shadow-lg p-6 text-center max-w-xs">
+                    <img src="{{ asset('images/blank-profile-picture.webp') }}" alt="Riska Marleni" class="w-28 h-28 mx-auto rounded-full mb-4 ring-2 ring-cyan-100" />
+                    <h4 class="font-semibold text-lg text-gray-900">Riska Marleni</h4>
+                    <p class="text-cyan-600 font-medium text-sm mb-2">S.Kom</p>
+                    <p class="inline-block px-3 py-1 rounded-full bg-purple-100 text-purple-700 text-xs font-semibold mb-3">Digital Marketing</p>
+                    <p class="text-gray-600 text-sm">
+                      Mengembangkan branding dan promosi digital di berbagai platform.
+                    </p>
+                  </div>
+                </div>
+
               </div>
 
-              <!-- Card 2 -->
-              <div class="swiper-slide flex justify-center">
-                <div class="bg-white border border-gray-200 rounded-2xl shadow-md p-6 text-center max-w-xs">
-                  <img src="{{ asset('images/blank-profile-picture.webp') }}" class="w-28 h-28 mx-auto rounded-full mb-4" />
-                  <h3 class="font-semibold text-lg text-gray-900">Ranti Ermina Sari, S.Pd, Gr</h3>
-                  <p class="text-cyan-600 font-medium">Project Manager</p>
-                  <p class="text-gray-600 text-sm mt-2">
-                    Bertanggung jawab atas koordinasi proyek dan memastikan setiap program berjalan efektif.
-                  </p>
-                </div>
-              </div>
-
-              <!-- Card 3 -->
-              <div class="swiper-slide flex justify-center">
-                <div class="bg-white border border-gray-200 rounded-2xl shadow-md p-6 text-center max-w-xs">
-                  <img src="{{ asset('images/blank-profile-picture.webp') }}" class="w-28 h-28 mx-auto rounded-full mb-4" />
-                  <h3 class="font-semibold text-lg text-gray-900">Nadir, S.Kom, Gr</h3>
-                  <p class="text-cyan-600 font-medium">System Analyst</p>
-                  <p class="text-gray-600 text-sm mt-2">
-                    Mendesain sistem pembelajaran digital yang efisien dan mudah digunakan oleh siswa.
-                  </p>
-                </div>
-              </div>
-
-              <!-- Card 4 -->
-              <div class="swiper-slide flex justify-center">
-                <div class="bg-white border border-gray-200 rounded-2xl shadow-md p-6 text-center max-w-xs">
-                  <img src="{{ asset('images/blank-profile-picture.webp') }}" class="w-28 h-28 mx-auto rounded-full mb-4" />
-                  <h3 class="font-semibold text-lg text-gray-900">Riska Marleni, S.Kom</h3>
-                  <p class="text-cyan-600 font-medium">Marketing</p>
-                  <p class="text-gray-600 text-sm mt-2">
-                    Mengembangkan branding dan promosi digital akademi di berbagai platform.
-                  </p>
-                </div>
-              </div>
-
+              <!-- Pagination -->
+              <div class="swiper-pagination mt-8"></div>
             </div>
 
-            <!-- Pagination -->
-            <div class="swiper-pagination mt-6"></div>
-
-            <!-- Navigation buttons -->
-            <div class="swiper-button-next text-cyan-600"></div>
-            <div class="swiper-button-prev text-cyan-600"></div>
+            <!-- Right Arrow -->
+            <div class="swiper-button-next text-cyan-600 relative w-auto h-auto after:text-5xl after:content-['→']"></div>
           </div>
         </div>
 
-        <!-- Visi dan Misi -->
+        <!-- Visi dan Misi Cards -->
         <div class="visi-misi mt-20" data-aos="fade-up" data-aos-delay="200">
-          <h3 class="text-3xl font-semibold text-center mb-12">Visi & Misi</h3>
-          <div class="flex flex-col md:flex-row items-stretch justify-center gap-10 md:gap-16">
-            <div class="flex-1 text-center md:text-left">
-              <h4 class="text-2xl font-semibold text-cyan-600 mb-4">Visi</h4>
-              <p class="text-gray-600 leading-relaxed">
-                Menjadi akademi terbaik dalam membangun generasi muda yang cerdas, kreatif, dan inovatif di bidang teknologi dan pemrograman.
-              </p>
+          <div class="text-center mb-14">
+            <h3 class="text-3xl md:text-4xl font-semibold text-gray-900 mb-3">Visi & Misi</h3>
+          </div>
+          <div class="grid md:grid-cols-2 gap-8">
+            
+            <!-- Visi Card -->
+            <div class="rounded-3xl bg-white p-8 md:p-10 shadow-lg ring-1 ring-slate-200/70 hover:shadow-xl transition duration-300">
+              <div class="flex items-start gap-4">
+                <div class="flex h-14 w-14 items-center justify-center rounded-2xl bg-cyan-100 text-2xl flex-shrink-0">
+                  🎯
+                </div>
+                <div>
+                  <h4 class="text-2xl font-semibold text-gray-900 mb-3">Visi</h4>
+                  <p class="text-gray-600 leading-relaxed text-base">
+                    Menjadi akademi terbaik dalam membangun generasi muda yang cerdas, kreatif, dan inovatif di bidang teknologi dan pemrograman.
+                  </p>
+                </div>
+              </div>
             </div>
-            <div class="hidden md:block w-[2px] bg-gray-300"></div>
-            <div class="flex-1 text-center md:text-left">
-              <h4 class="text-2xl font-semibold text-cyan-600 mb-4">Misi</h4>
-              <ul class="list-disc list-inside text-gray-600 leading-relaxed">
-                <li>Mengembangkan kurikulum belajar yang menyenangkan dan interaktif.</li>
-                <li>Membimbing siswa dalam menciptakan proyek teknologi nyata.</li>
-                <li>Mendorong kreativitas dan kerja sama dalam tim.</li>
-                <li>Menanamkan nilai-nilai kepemimpinan dan rasa ingin tahu yang tinggi.</li>
-              </ul>
+
+            <!-- Misi Card -->
+            <div class="rounded-3xl bg-white p-8 md:p-10 shadow-lg ring-1 ring-slate-200/70 hover:shadow-xl transition duration-300">
+              <div>
+                <div class="flex items-center gap-3 mb-5">
+                  <div class="flex h-14 w-14 items-center justify-center rounded-2xl bg-emerald-100 text-2xl flex-shrink-0">
+                    🚀
+                  </div>
+                  <h4 class="text-2xl font-semibold text-gray-900">Misi</h4>
+                </div>
+                <ul class="space-y-3">
+                  <li class="flex items-start gap-3 text-gray-600">
+                    <span class="text-cyan-500 font-bold mt-0.5">✓</span>
+                    <span>Mengembangkan kurikulum belajar yang menyenangkan dan interaktif.</span>
+                  </li>
+                  <li class="flex items-start gap-3 text-gray-600">
+                    <span class="text-cyan-500 font-bold mt-0.5">✓</span>
+                    <span>Membimbing siswa dalam menciptakan proyek teknologi nyata.</span>
+                  </li>
+                  <li class="flex items-start gap-3 text-gray-600">
+                    <span class="text-cyan-500 font-bold mt-0.5">✓</span>
+                    <span>Mendorong kreativitas dan kerja sama dalam tim.</span>
+                  </li>
+                  <li class="flex items-start gap-3 text-gray-600">
+                    <span class="text-cyan-500 font-bold mt-0.5">✓</span>
+                    <span>Menanamkan nilai-nilai kepemimpinan dan rasa ingin tahu yang tinggi.</span>
+                  </li>
+                </ul>
+              </div>
             </div>
           </div>
         </div>
